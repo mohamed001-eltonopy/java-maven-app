@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Library('shared-library') _
+@Library('shared-library@new-feature') _
 
 pipeline {
     agent any
@@ -7,7 +7,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    buildJar()
+                    buildJar(name: "finance",dayOfWeek: "tues")
                 }
             }
         }
