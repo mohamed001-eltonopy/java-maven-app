@@ -1,12 +1,13 @@
 #!/usr/bin/env groovy
 
+@Library('shared-library') _
 pipeline {
     agent none
     stages {
         stage('build') {
             steps {
                 script {
-                    echo "Building the application..."
+                   buildJar()
                 }
             }
         }
