@@ -1,28 +1,38 @@
-#!/usr/bin/env groovy
+def gv
 
 pipeline {
-    agent none
+    agent any
     stages {
-        stage('build') {
+        stage("init") {
             steps {
                 script {
-                    echo "Building the application from bug fix branch ..."
+                    gv = load "script.groovy"
                 }
             }
         }
-        stage('test') {
+        stage("build jar") {
             steps {
                 script {
-                    echo "Testing the application from bug fix branch ......"
+                    echo "building jar"
+                    //gv.buildJar()
                 }
             }
         }
-        stage('deploy') {
+        stage("build image") {
             steps {
                 script {
-                    echo "Deploying the application from bug fix branch ......"
+                    echo "building image"
+                    //gv.buildImage()
                 }
             }
         }
-    }
+        stage("deploy") {
+            steps {
+                script {
+                    echo "deploying"
+                    //gv.deployApp()
+                }
+            }
+        }
+    }   
 }
