@@ -6,21 +6,21 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    echo "Building the application..."
+                    echo "Building the application from bug fix branch ..."
                 }
             }
         }
         stage('test') {
             steps {
                 script {
-                    echo "Testing the application..."
+                    echo "Testing the application from bug fix branch ......"
                 }
             }
         }
         stage('deploy') {
             steps {
                 script {
-                    echo "Deploying the application..."
+                    echo "Deploying the application from bug fix branch ......"
                 }
             }
         }
