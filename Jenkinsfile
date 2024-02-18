@@ -7,7 +7,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                   buildJar("finance","jmv")
+                   buildJar(name: "finance",version: "jmv")
                 }
             }
         }
