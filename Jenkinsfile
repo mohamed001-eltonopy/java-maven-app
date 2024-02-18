@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-@Library('shared-library') _
+@Library('shared-library@new-feature') _
 pipeline {
     agent any
     stages {
